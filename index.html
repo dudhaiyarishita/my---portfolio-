@@ -293,6 +293,33 @@
             font-size: 0.8rem;
         }
 
+        .project-link-wrapper {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #1a1a1e;
+        }
+
+        .project-btn {
+            display: inline-block;
+            color: #000;
+            background-color: var(--neon-accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-btn:hover {
+            background-color: transparent;
+            color: var(--neon-accent);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+            outline: 1px solid var(--neon-accent);
+        }
+
         /* HOBBIES VIBE SECTION */
         .hobbies-wrap {
             display: flex;
@@ -321,6 +348,7 @@
 
     <div class="container">
         
+        <!-- HERO HEADER -->
         <header>
             <div class="tag">Seeking Internship // Open to Work</div>
             <h1>RISHITA <span>DUDHAIYA</span></h1>
@@ -335,6 +363,7 @@
             </div>
         </header>
 
+        <!-- EDUCATION SECTION -->
         <section id="education">
             <div class="section-title">Education Track</div>
             <div class="timeline-container">
@@ -368,6 +397,7 @@
             </div>
         </section>
 
+        <!-- SKILLS MATRIX -->
         <section id="skills">
             <div class="section-title">Technical Infrastructure</div>
             <div class="skills-grid">
@@ -424,14 +454,16 @@
             </div>
         </section>
 
+        <!-- ACADEMIC PROJECTS -->
         <section id="projects">
             <div class="section-title">Selected Drops // Academic Repositories</div>
             <div class="project-grid">
                 
+                <!-- Project 1 -->
                 <div class="project-card">
                     <div>
                         <div class="project-id">BUILD_01</div>
-                        <div class="project-title">User Registration Form with Validation</div>
+                        <div class="project-title">Account Verification</div>
                     </div>
                     <ul>
                         <li>Developed a web-based user registration form using HTML, CSS, and JavaScript.</li>
@@ -439,8 +471,12 @@
                         <li>Added password visibility toggle and error handling messages.</li>
                         <li>Designed a responsive and user-friendly interface.</li>
                     </ul>
+                    <div class="project-link-wrapper">
+                        <a href=" https://dudhaiyarishita.github.io/account-confirmation/" class="project-btn" target="_blank">Launch App →</a>
+                    </div>
                 </div>
 
+                <!-- Project 2 -->
                 <div class="project-card">
                     <div>
                         <div class="project-id">BUILD_02</div>
@@ -452,8 +488,12 @@
                         <li>Included features such as course selection, file upload, and contact details.</li>
                         <li>Applied responsive web design principles for better usability.</li>
                     </ul>
+                    <div class="project-link-wrapper">
+                        <a href="https://dudhaiyarishita.github.io/user-registration-form/" class="project-btn" target="_blank">Launch App →</a>
+                    </div>
                 </div>
 
+                <!-- Project 3 -->
                 <div class="project-card">
                     <div>
                         <div class="project-id">BUILD_03</div>
@@ -465,8 +505,12 @@
                         <li>Designed structured tables with modern UI styling.</li>
                         <li>Enhanced user experience with responsive layouts and interactive effects.</li>
                     </ul>
+                    <div class="project-link-wrapper">
+                        <a href=" https://dudhaiyarishita.github.io/gtu-web-tech-syllabus/" class="project-btn" target="_blank">Launch App →</a>
+                    </div>
                 </div>
 
+                <!-- Project 4 -->
                 <div class="project-card">
                     <div>
                         <div class="project-id">BUILD_04</div>
@@ -478,8 +522,12 @@
                         <li>Displayed real-time success and error messages based on user input.</li>
                         <li>Designed a modern and responsive user interface.</li>
                     </ul>
+                    <div class="project-link-wrapper">
+                        <a href="https://dudhaiyarishita.github.io/email-verification/" class="project-btn" target="_blank">Launch App →</a>
+                    </div>
                 </div>
 
+                <!-- Project 5 -->
                 <div class="project-card">
                     <div>
                         <div class="project-id">BUILD_05</div>
@@ -491,11 +539,15 @@
                         <li>Restricted non-numeric input and provided instant validation feedback.</li>
                         <li>Created a responsive and interactive user interface.</li>
                     </ul>
+                    <div class="project-link-wrapper">
+                        <a href="https://dudhaiyarishita.github.io/mobile-number-verification/" class="project-btn" target="_blank">Launch App →</a>
+                    </div>
                 </div>
 
             </div>
         </section>
 
+        <!-- TRAINING & WORKSHOPS -->
         <section id="trainings">
             <div class="section-title">Trainings & Credentials</div>
             <div class="timeline-container">
@@ -511,6 +563,7 @@
             </div>
         </section>
 
+        <!-- HOBBIES / INTERACTIVE FOOTER -->
         <footer>
             <div class="section-title">Vibe Check // Creative Outlets</div>
             <div class="hobbies-wrap">
