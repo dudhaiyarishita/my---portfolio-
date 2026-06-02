@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dudhaiya Rishita | Portfolio</title>
+    <style>
+        /* CSS VARIABLES & RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        :root {
+            --bg-dark: #070708;       /* Obsidian Black */
+            --card-dark: #111113;     /* Sleek Module Backgrounds */
+            --neon-accent: #00ff66;   /* Gen Z Neon Green */
+            --text-pure: #ffffff;
+            --text-muted: #94a3b8;    /* Readable gray */
+            --border-color: #1f1f23;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-pure);
+            line-height: 1.6;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* HERO HEADER STYLE */
+        header {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 3rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(0, 255, 102, 0.05);
+            color: var(--neon-accent);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h1 span {
+            color: var(--neon-accent);
+            text-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* METADATA GRID */
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-item span {
+            color: var(--neon-accent);
+            font-weight: bold;
+        }
+
+        .meta-item a {
+            color: var(--text-pure);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .meta-item a:hover {
+            color: var(--neon-accent);
+        }
+
+        /* CORE GRID LAYOUT */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--neon-accent);
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 1.5rem;
+        }
+
+        /* TIMELINE (EDUCATION & WORKSHOPS) */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-dark);
+            border: 2px solid var(--neon-accent);
+            border-radius: 50%;
+        }
+
+        .timeline-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .timeline-institution {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .timeline-duration {
+            font-size: 0.9rem;
+            color: var(--neon-accent);
+            background: rgba(0, 255, 102, 0.05);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .timeline-score {
+            color: var(--text-pure);
+            font-weight: 600;
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        /* SKILLS STACKS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skills-card {
+            background: var(--card-dark);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .skills-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .badge {
+            background: #18181b;
+            border: 1px solid #27272a;
+            color: var(--text-pure);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .badge:hover {
+            border-color: var(--neon-accent);
+            background: rgba(0, 255, 102, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* ACADEMIC PROJECTS */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card-dark);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            border-color: var(--neon-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 255, 102, 0.02);
+        }
+
+        .project-id {
+            font-family: monospace;
+            color: var(--neon-accent);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .project-card li::before {
+            content: "//";
+            position: absolute;
+            left: 0;
+            color: var(--neon-accent);
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* HOBBIES VIBE SECTION */
+        .hobbies-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .hobby-item {
+            background: transparent;
+            border: 1px dashed var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            body { padding: 2rem 1rem; }
+            .timeline-meta { flex-direction: column; gap: 0.5rem; }
+            header { margin-bottom: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="tag">Seeking Internship // Open to Work</div>
+            <h1>RISHITA <span>DUDHAIYA</span></h1>
+            <p class="about-text">
+                Electronics & Communication Engineering student with a strong interest in Frontend Web Development. Skilled in HTML, CSS, JavaScript, and responsive web design. Passionate about building user-friendly and visually appealing websites. Quick learner with strong problem-solving and teamwork skills, seeking an opportunity as a Frontend Developer Intern or Web Developer.
+            </p>
+            
+            <div class="meta-info">
+                <div class="meta-item"><span>📍</span> Jamnagar, Gujarat</div>
+                <div class="meta-item"><span>✉️</span> <a href="mailto:dudhaiyarishita01@gmail.com">dudhaiyarishita01@gmail.com</a></div>
+                <div class="meta-item"><span>📞</span> <a href="tel:+919106554174">+91 - 9106554174</a></div>
+            </div>
+        </header>
+
+        <section id="education">
+            <div class="section-title">Education Track</div>
+            <div class="timeline-container">
+                
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-title">B.E. Electronics & Communication</span>
+                        <span class="timeline-duration">2023 - 2026</span>
+                    </div>
+                    <div class="timeline-institution">GEC Rajkot, GTU</div>
+                    <div class="timeline-score">CGPA: 8.55</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-title">Diploma Electronics & Communication</span>
+                        <span class="timeline-duration">2020 - 2023</span>
+                    </div>
+                    <div class="timeline-institution">Govt. Polytechnic Jamnagar, GTU</div>
+                    <div class="timeline-score">CGPA: 8.59</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-title">10th Standard Secondary Schooling</span>
+                        <span class="timeline-duration">Passing Year: 2020</span>
+                    </div>
+                    <div class="timeline-score">Percentage: 65%</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-title">Technical Infrastructure</div>
+            <div class="skills-grid">
+                
+                <div class="skills-card">
+                    <h3>Programming Languages</h3>
+                    <div class="badge-container">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>Hardware Systems</h3>
+                    <div class="badge-container">
+                        <span class="badge">8051</span>
+                        <span class="badge">Arduino UNO/Nano</span>
+                        <span class="badge">ESP8266</span>
+                        <span class="badge">STM32F072RBT6</span>
+                        <span class="badge">Raspberry Pi 3</span>
+                        <span class="badge">Raspberry Pi Pico RP2040</span>
+                        <span class="badge">MIMXRT1052 (ARM Cortex-M7)</span>
+                        <span class="badge">Sensor & Module Interfacing</span>
+                        <span class="badge">Embedded System Development</span>
+                        <span class="badge">Hardware Testing & Debugging</span>
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>Software Ecosystem</h3>
+                    <div class="badge-container">
+                        <span class="badge">Visual Studio Code</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">GitHub</span>
+                        <span class="badge">Canva (Optional)</span>
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h3>Soft Core</h3>
+                    <div class="badge-container">
+                        <span class="badge">Communication Skills</span>
+                        <span class="badge">Teamwork</span>
+                        <span class="badge">Task Management</span>
+                        <span class="badge">Problem Solving</span>
+                        <span class="badge">Time Management</span>
+                        <span class="badge">Quick Learner</span>
+                        <span class="badge">Adaptability</span>
+                        <span class="badge">Leadership Skills</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-title">Selected Drops // Academic Repositories</div>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <div>
+                        <div class="project-id">BUILD_01</div>
+                        <div class="project-title">User Registration Form with Validation</div>
+                    </div>
+                    <ul>
+                        <li>Developed a web-based user registration form using HTML, CSS, and JavaScript.</li>
+                        <li>Implemented validation for username, password, confirm password, and email fields.</li>
+                        <li>Added password visibility toggle and error handling messages.</li>
+                        <li>Designed a responsive and user-friendly interface.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-id">BUILD_02</div>
+                        <div class="project-title">Student Registration System</div>
+                    </div>
+                    <ul>
+                        <li>Created a student registration form to collect personal and academic information.</li>
+                        <li>Implemented form validation for accurate data entry.</li>
+                        <li>Included features such as course selection, file upload, and contact details.</li>
+                        <li>Applied responsive web design principles for better usability.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-id">BUILD_03</div>
+                        <div class="project-title">GTU Web Technology Course Info Website</div>
+                    </div>
+                    <ul>
+                        <li>Developed a responsive educational website using HTML and CSS.</li>
+                        <li>Displayed teaching schemes, examination patterns, and syllabus details.</li>
+                        <li>Designed structured tables with modern UI styling.</li>
+                        <li>Enhanced user experience with responsive layouts and interactive effects.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-id">BUILD_04</div>
+                        <div class="project-title">Email Verification Web Application</div>
+                    </div>
+                    <ul>
+                        <li>Built an email validation application using HTML, CSS, and JavaScript.</li>
+                        <li>Implemented Regex-based email format verification.</li>
+                        <li>Displayed real-time success and error messages based on user input.</li>
+                        <li>Designed a modern and responsive user interface.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-id">BUILD_05</div>
+                        <div class="project-title">Mobile Number Verification Web App</div>
+                    </div>
+                    <ul>
+                        <li>Developed a mobile number validation system using HTML, CSS, and JavaScript.</li>
+                        <li>Implemented 10-digit number verification using Regular Expressions (Regex).</li>
+                        <li>Restricted non-numeric input and provided instant validation feedback.</li>
+                        <li>Created a responsive and interactive user interface.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="trainings">
+            <div class="section-title">Trainings & Credentials</div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-meta"><span class="timeline-title">Fundamentals of PCB Design for Industry Workshop</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-meta"><span class="timeline-title">Semiconductor Design & Development Workshop</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-meta"><span class="timeline-title">Foundation Training in Semiconductor Assembly, Testing & Packaging</span></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="section-title">Vibe Check // Creative Outlets</div>
+            <div class="hobbies-wrap">
+                <div class="hobby-item">🎧 Listening to music</div>
+                <div class="hobby-item">🍳 Cooking</div>
+                <div class="hobby-item">🧵 Crochet and Embroidery</div>
+                <div class="hobby-item">💃 Dancing</div>
+                <div class="hobby-item">🏺 Macramé Art</div>
+                <div class="hobby-item">🎬 Video editing</div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
